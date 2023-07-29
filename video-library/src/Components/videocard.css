@@ -1,0 +1,49 @@
+.video-card-box{
+    width: 23rem;
+    height: 22rem;
+    display: flex;
+    border-radius: 5px ;
+    flex-direction:column ;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img-box{
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 23rem;
+   height: 13rem;
+   border-radius:5px ;
+}
+
+.content-container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 0.6rem;
+    position: relative;
+}
+
+.content-container h5{
+    padding: 0.3rem 0.3rem 0.3rem 0rem;
+}
+
+.profile{
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+}
+
+.watch-later-btn{
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -12.4rem;
+    margin: 0.3rem;
+    z-index: 99;
+}
+
+
