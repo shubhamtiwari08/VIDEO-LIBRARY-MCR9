@@ -70,7 +70,7 @@ function SingleVideo() {
             </div>
             <div className="notes-box">
               <h3>my notes</h3>
-              {finalNote.map(data=><p>{data}</p>)}
+              {finalNote.map(data=><div className="notes-container"><p>{data}</p><button>delete</button></div>)}
             </div>
           </div>
           <div className="suggestion-box">

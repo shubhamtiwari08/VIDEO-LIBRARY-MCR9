@@ -6,6 +6,7 @@ import CategoryVideos from '../Pages/CategoryVideos';
 import SingleVideo from '../Pages/SingleVideo';
 import Playlist from '../Pages/Playlist';
 import Watchlater from '../Pages/Watchlater';
+import SinglePlaylist from '../Pages/singlePlaylist';
 
 
 function Routing() {
@@ -18,6 +19,7 @@ function Routing() {
       <Route path='/videos/:singleVideoId' element={<SingleVideo/>} />
       <Route path='/playlist' element={<Playlist/>} />
       <Route path='/videos/watchlater' element={<Watchlater/>} />
+      <Route path="/playlist/:singlePlaylistId" element={<SinglePlaylist/>}/>
       </Routes>      
     </div>
   )
