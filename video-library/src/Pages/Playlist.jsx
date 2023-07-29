@@ -6,7 +6,7 @@ import { playlistContext } from "../Context/PlaylistProvider";
 import CreatePlaylist from "../Components/createPlaylist";
 
 function Playlist() {
-    const {playlist,setPlaylist,createToggle,setCreateToggle} = useContext(playlistContext)
+    const {playlist,setPlaylist,createToggle,setCreateToggle,handleDelete} = useContext(playlistContext)
    
 
   return (
@@ -14,7 +14,7 @@ function Playlist() {
       <SideBar />
       <div className="categories-container all-playlist-container">
        <div className="playlist-box">  
-      {playlist.map(item=><PlaylistCard data={item}/>)}
+      {playlist.map(item=><PlaylistCard data={item} />)}
       </div>
       <button className="add-list-btn" onClick={()=> setCreateToggle(true)}>+</button>
       {createToggle&&<div className="add-playlist">

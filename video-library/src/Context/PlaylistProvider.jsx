@@ -20,12 +20,19 @@ function PlaylistProvider({children}) {
             }
         })
           videoDispatch({type:"ADD_TO_PLAYLIST",payload:updatedData})
+          setCreateToggle(false)
     }
+
+    const handleDelete = (vtitle)=>{
+       setPlaylist(playlist.filter(({title})=> title !== vtitle))
+    }
+
+
 
     
 
   return (
-    <playlistContext.Provider value={{handleAdd,playlist,setPlaylist,createToggle,setCreateToggle}}>{children}</playlistContext.Provider>
+    <playlistContext.Provider value={{handleAdd,playlist,handleDelete,setPlaylist,createToggle,setCreateToggle}}>{children}</playlistContext.Provider>
   )
 
   
