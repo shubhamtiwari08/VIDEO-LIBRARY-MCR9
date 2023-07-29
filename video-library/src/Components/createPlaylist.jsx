@@ -2,9 +2,16 @@ import React, { useContext, useState } from 'react'
 import './other.css'
 import { playlistContext } from '../Context/PlaylistProvider'
 
-function CreatePlaylist() {
+
+
+
+
+
+
+function CreatePlaylist({data}) {
 
     const {createToggle,setCreateToggle,playlist,setPlaylist} = useContext(playlistContext)
+    const {handleAdd} = useContext(playlistContext)
     const [title,setTittle] = useState("")
 
     const handleInput=(e)=>{
@@ -17,7 +24,10 @@ function CreatePlaylist() {
         
         setPlaylist([...playlist,title])
         setCreateToggle(false)
+
     }
+
+    
 
 
   return (
@@ -26,6 +36,7 @@ function CreatePlaylist() {
       <input name='title' type="text" placeholder='title'  onChange={handleInput}/>
       <input name="description" type="text" placeholder='title'  onChange={handleInput}/>
       <button onClick={handleCreate}>Create New playlist</button>
+      {playlist.map(({title})=> <p onClick={()=>handleAdd(title,data)}>{title}<hr/></p>)}
     </div>
 
   )

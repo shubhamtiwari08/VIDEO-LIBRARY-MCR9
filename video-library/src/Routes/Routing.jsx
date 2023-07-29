@@ -20,6 +20,7 @@ function Routing() {
       <Route path='/playlist' element={<Playlist/>} />
       <Route path='/videos/watchlater' element={<Watchlater/>} />
       <Route path="/playlist/:singlePlaylistId" element={<SinglePlaylist/>}/>
+      
       </Routes>      
     </div>
   )

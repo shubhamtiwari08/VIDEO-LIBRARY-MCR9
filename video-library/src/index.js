@@ -10,10 +10,13 @@ import PlaylistProvider from './Context/PlaylistProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <PlaylistProvider>
   <VideoProvider>
+  <PlaylistProvider>
+
+  
     <App />
-  </VideoProvider>
+  
   </PlaylistProvider>
+  </VideoProvider>
   </BrowserRouter>
 )

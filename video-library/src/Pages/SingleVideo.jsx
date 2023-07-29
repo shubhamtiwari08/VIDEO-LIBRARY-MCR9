@@ -9,11 +9,16 @@ import { videos } from "../DATA/videos";
 import { videoContext } from "../Context/VideoProvider";
 import VideoCard from "../Components/VideoCard";
 import AddNote from "../Components/AddNote";
+import CreatePlaylist from "../Components/createPlaylist";
+import { playlistContext } from "../Context/PlaylistProvider";
 
 function SingleVideo() {
 
     
     const {noteToggle,setNoteToggle,notes,videoState,finalNote,setFinalNote,videoDispatch,videoData} = useContext(videoContext)
+
+    const {createToggle,setCreateToggle} = useContext(playlistContext)
+
     const {singleVideoId} = useParams()
     
 
@@ -61,9 +66,14 @@ function SingleVideo() {
             <FontAwesomeIcon icon={faClockFour} color="black"/>
           </button>
         ) }
-             <FontAwesomeIcon icon={faListAlt} style={{ color: 'black' }} />
+             {createToggle&&<div className="add-playlist-pop">
+             <CreatePlaylist data={singleVideoData}/>
+             </div>}
+             <div className="add-playlist-btn" onClick={()=>setCreateToggle(!createToggle)}>
+             <FontAwesomeIcon icon={faListAlt} style={{ color: 'black' }} size="xl"/>
+             </div>
              <div className="pop-up">{noteToggle&&<div className="add-note-pop"><AddNote/></div>}</div>
-             <div className="addnotebtn" onClick={()=>setNoteToggle(!noteToggle)}>
+             <div className="addnotebtn" style={{cursor:"pointer"}} onClick={()=>setNoteToggle(!noteToggle)}>
              <FontAwesomeIcon icon={faNoteSticky} style={{ color: 'black' }} />
              </div>
              </div>

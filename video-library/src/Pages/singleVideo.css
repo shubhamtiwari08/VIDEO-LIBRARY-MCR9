@@ -57,3 +57,11 @@
     color: black;
     border: none;
 }
+
+.add-playlist-pop{
+    position: absolute;
+    z-index: 999;
+    top: -15rem;
+    right: 10rem;
+    border: 1px solid black;
+}

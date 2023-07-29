@@ -12,5 +12,8 @@ export const videoReducer=(state,{type,payload})=>{
             console.log("remove")
             const newWatchLater = state.watchLater.filter(({_id})=> _id !== payload._id)
          return {...state,watchLater:[...newWatchLater]}
+        case "ADD_TO_PLAYLIST":
+            
+          return {...state,video:payload}
     }
 }

@@ -10,8 +10,12 @@ function VideoProvider({ children }) {
   const [finalNote,setFinalNote] = useState([])
   const [noteToggle,setNoteToggle] = useState(false)
 
+  
+  
+
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     watchLater: [],
+    video:videoData
   });
 
   return (
