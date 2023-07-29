@@ -13,7 +13,7 @@ const {handleDelete} = useContext(playlistContext)
     <div className='playlist-card' >
       <img src="https://picsum.photos/311/174" alt="playlist-card" onClick={()=> navigate(`/playlist/${data.title}`)} />
       <h3>{data.title}</h3>
-      <p>description</p>
+      <p>{data.description}</p>
       <button onClick={()=>handleDelete(data.title)}>Delete</button>
     </div>
   )

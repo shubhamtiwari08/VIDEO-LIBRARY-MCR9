@@ -19,7 +19,7 @@ function SinglePlaylist() {
       <div className="categories-container all-playlist-container">
       <h3>{singlePlaylistId}</h3>
        <div className="playlist-box">  
-        {list.map((data)=> <VideoCard data={data}/>)}
+        {list.map((data)=> <VideoCard data={data} playlist={true}/>)}
     
       </div>
     </div>

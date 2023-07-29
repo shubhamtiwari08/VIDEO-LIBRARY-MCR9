@@ -15,5 +15,7 @@ export const videoReducer=(state,{type,payload})=>{
         case "ADD_TO_PLAYLIST":
             
           return {...state,video:payload}
+        case "REMOVE_FROM_PLAYLIST":
+          return {...state,video:payload}
     }
 }

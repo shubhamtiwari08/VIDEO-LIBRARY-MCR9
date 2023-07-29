@@ -4,18 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClockFour } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { videoContext } from "../Context/VideoProvider";
+import { playlistContext } from "../Context/PlaylistProvider";
 
-function VideoCard({ data }) {
+function VideoCard({ data,playlist}) {
   const { videoState, videoDispatch } = useContext(videoContext);
+  const {handleRemove} = useContext(playlistContext)
   const { title, views, chips, thumbnail, src, category, creator, _id } = data;
   const navigate = useNavigate();
 
-  console.log(videoState.watchLater.filter(({_id})=> _id === 1))
-
-  console.log(videoState.watchLater)
+console.log(playlist)
 
   return (
     <div className="video-card-box">
+    {playlist&&<button onClick={()=>handleRemove(data,data?.vTitle)}>remove</button>}
       <div className="img-box" onClick={() => navigate(`/videos/${_id}`)}>
         <img src={thumbnail} alt={title} />
       </div>

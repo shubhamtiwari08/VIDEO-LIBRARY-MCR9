@@ -28,11 +28,23 @@ function PlaylistProvider({children}) {
     }
 
 
+    const handleRemove = (data,vTitle)=>{
+             const updatedData = videoState.video.map((vid)=>{
+                if(vid?.vTitle === vTitle ){
+                    return({...vid,vTitle:""})
+                }
+        })
+        videoDispatch({type:"REMOVE_FROM_PLAYLIST",payload:updatedData})
+          setCreateToggle(false)
+    } 
+
+
+
 
     
 
   return (
-    <playlistContext.Provider value={{handleAdd,playlist,handleDelete,setPlaylist,createToggle,setCreateToggle}}>{children}</playlistContext.Provider>
+    <playlistContext.Provider value={{handleRemove,handleAdd,playlist,handleDelete,setPlaylist,createToggle,setCreateToggle}}>{children}</playlistContext.Provider>
   )
 
   

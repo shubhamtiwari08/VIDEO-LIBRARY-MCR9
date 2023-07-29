@@ -27,7 +27,7 @@ function CreatePlaylist({data}) {
 
     }
 
-    
+
 
     
 
@@ -36,7 +36,7 @@ function CreatePlaylist({data}) {
     <div className='create-playlist'>
       <h3>add to playlist</h3>
       <input name='title' type="text" placeholder='title'  onChange={handleInput}/>
-      <input name="description" type="text" placeholder='title'  onChange={handleInput}/>
+      <input name="description" type="text" placeholder='description'  onChange={handleInput}/>
       <button onClick={handleCreate}>Create New playlist</button>
       {playlist.map(({title})=> <p onClick={()=>handleAdd(title,data)}>{title}<hr/></p>)}
     </div>
